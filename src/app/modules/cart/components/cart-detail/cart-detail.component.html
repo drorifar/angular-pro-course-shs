@@ -1,0 +1,12 @@
+
+
+  <h2 style="cursor: pointer;" routerLink="/cart">
+    My Cart: {{cartProducts.length}} ({{cartPrice | currency}})
+  </h2>
+
+<div class="products-container">
+    <h2 *ngIf="!cartProducts || cartProducts.length === 0; else elseBlock">Cart Is Empty</h2> 
+    <app-product #elseBlock  *ngFor="let item of cartProducts" [product]="item" (addToCart)="addRemoveCart($event)"
+      [isInCart]="checkIsInCart(item._id)">
+    </app-product>
+  </div>

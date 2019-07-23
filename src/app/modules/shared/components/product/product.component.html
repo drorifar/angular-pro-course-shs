@@ -1,0 +1,11 @@
+<div class="product">
+  <h4 (click)="openProductPage()" style="cursor: pointer;">{{product.description}}</h4>
+  <img [src]="product.imageUrl" (click)="openDialog()"/>
+  <p>Price: {{product.price/100 | discount : 0.5| currency }}</p>  
+  <button [ngStyle]="{'color': !isInCart ? 'green' : '#e42f2f'}" class="fa" [ngClass]="{'fa-plus': !isInCart, 'fa-minus': isInCart }" mat-icon-button (click)="addRemoveProductToCart(product)">
+      <span style="font-size: 30px;" class="fa fa-shopping-cart"></span>
+  </button>
+  <p appNgNotIf [condition]="product.price/100 > 20" style="color: gold">best Price!</p>
+  <p  *appNgNotIf2="product.price/100 > 20" style="color: red">discount!</p>
+
+</div>

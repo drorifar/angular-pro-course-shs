@@ -1,0 +1,34 @@
+<!-- <mat-toolbar>
+  <a *ngIf="!userName" routerLink="/">Login</a>
+  <a *ngIf="userName" (click)="logout()">Logout</a>
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Search" (input)="search($event.target.value)">
+  </mat-form-field>
+
+  <a routerLink="/feed">Feed</a>
+  <a routerLink="/register">Register</a>
+</mat-toolbar> -->
+
+
+<mat-toolbar color="primary">
+  <mat-toolbar-row class="nav-products">
+    <span *ngIf="!userName" routerLink="/">Login</span>
+    <span *ngIf="userName" (click)="logout()">Logout  {{userName}}</span>
+    <i class="example-spacer"></i>
+    <!-- <mat-form-field class="example-full-width">
+      <input matInput placeholder="Search" (input)="search($event.target.value)">
+    </mat-form-field> -->
+<app-auto-complete [acProvider]="productProvider"></app-auto-complete>
+    <span  *ngIf="userName" routerLink="/feed">Feed</span>
+    <span  *ngIf="userName" routerLink="/cart">Cart</span>
+    <span *ngIf="!userName" routerLink="/register">Register</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<!-- <h1 *ngIf="userName">
+  Hello {{userName}}, Select Your Products
+</h1> -->
+<!-- <h1 *ngIf="!userName">
+  Please Login
+</h1> -->

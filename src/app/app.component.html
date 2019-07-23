@@ -1,0 +1,28 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <app-header>
+
+  </app-header>
+  <!-- <h2>
+    My Cart: {{cartItems.length}} ({{cartPrice | currency}})
+  </h2> -->
+  <!-- <app-products-container>    
+  </app-products-container> -->
+<!-- 
+  <div class="pagination-button">
+    <button class="pagination-button" mat-icon-button (click)="prevPage()" class="fa fa-chevron-circle-left"
+    matTooltip="Next Page"></button>
+    <span style="margin: 0 100px 0 100px">{{itemsPage + 1 }}</span>
+    <button class="pagination-button" mat-icon-button (click)="nextPage()" class="fa fa-chevron-circle-right"
+    matTooltip="Previous Page"></button>
+  </div>
+
+  <div class="products-container">
+    <app-product *ngFor="let item of items" [product]="item" (addToCart)="addRemoveCart($event)"
+      [isInCart]="checkIsInCart(item._id)">
+    </app-product>
+  </div> -->
+  <router-outlet></router-outlet>
+</div>
+
+

@@ -1,0 +1,5 @@
+<p>{{productId}}</p>
+<div class="products-container">
+  <app-product [product]="product" [isInCart]="checkIsInCart()" (addToCart)="addRemoveCart($event)">
+  </app-product>
+</div>

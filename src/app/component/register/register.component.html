@@ -1,0 +1,25 @@
+<div class="wrapper" >
+    <div class="container">
+      <form [formGroup]="form">
+            <div class="group">
+                    <label for="email">Name:</label>
+                    <input type="email"  formControlName="name">
+                    <small style="color: red" *ngIf="!form.get('name').valid && form.get('name').touched">Name Is Required</small>
+                  </div>
+        <div class="group">
+          <label for="email">Email:</label>
+          <input type="email"  formControlName="email">
+          <small style="color: red" *ngIf="!form.get('email').valid && form.get('email').hasError('required') && form.get('email').touched">Email Is Required</small>
+          <small style="color: red" *ngIf="!form.get('email').valid && form.get('email').hasError('email') && form.get('email').touched">Email Is Not Valid</small>
+        </div>
+        <div class="group">
+          <label for="password">Password:</label>
+          <input type="password"  formControlName="password">
+          <small style="color: red" *ngIf="!form.get('password').valid && form.get('password').touched">Password Is Required</small>
+        </div>
+        <button style="margin-top:10px; font-size: 20px; background: #20c198; padding: 5px;"
+                mat-button  (click)="submit()"  [disabled]="!form.valid">Login</button>
+
+      </form>
+    </div>
+  </div>

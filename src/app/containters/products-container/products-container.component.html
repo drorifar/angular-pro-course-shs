@@ -1,0 +1,22 @@
+<div appScrollEnd (scrollEnded)="scrollOnBottem($event)">
+
+  <h2 style="cursor: pointer;" routerLink="/cart">
+    My Cart: {{cartItems.length}} ({{cartPrice | currency}})
+  </h2>
+
+  <div class="pagination-button">
+    <button class="pagination-button" mat-icon-button (click)="prevPage()" class="fa fa-chevron-circle-left"
+      matTooltip="Next Page"></button>
+    <span style="margin: 0 100px 0 100px">{{itemsPage + 1 }}</span>
+    <button class="pagination-button" mat-icon-button (click)="nextPage()" class="fa fa-chevron-circle-right"
+      matTooltip="Previous Page"></button>
+  </div>
+
+  <div class="products-container">
+    <app-product *ngFor="let item of items" [product]="item" (addToCart)="addRemoveCart($event)"
+      [isInCart]="checkIsInCart(item._id)">
+    </app-product>
+  </div>
+
+
+</div>

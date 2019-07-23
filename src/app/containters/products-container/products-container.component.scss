@@ -1,0 +1,11 @@
+.products-container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.pagination-button {
+    font-size: 30px;
+    color: #443089;
+}

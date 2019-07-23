@@ -1,0 +1,27 @@
+<div class="wrapper">
+  <div class="container">
+    <form #form="ngForm" (ngSubmit)="submit(form)">
+      <div class="group">
+        <label for="email">Email:</label>
+        <input type="email" ngModel name="email" required email #email="ngModel">
+        <small style="color: red" *ngIf="email.touched && !email.valid && email.hasError('required')">Email Is
+          Required</small>
+        <small style="color: red" *ngIf="email.touched && !email.valid && email.hasError('email')">Email Is Not
+          Valid</small>
+      </div>
+      <div class="group">
+        <label for="password">Password:</label>
+        <input type="password" ngModel name="password" required #passwordTag="ngModel">
+        <small style="color: red"
+          *ngIf="passwordTag.touched && !passwordTag.valid && passwordTag.hasError('required')">Password Is
+          Required</small>
+
+      </div>
+      <button style="margin-top:10px; font-size: 20px; background: #20c198; padding: 5px;" mat-button type="submit"
+       id="submit" [disabled]="!form.valid">Login</button>
+      <button style="margin-top:10px; margin-left: 10px; font-size: 20px; background: #20c198; padding: 5px;" mat-button
+        (click)="register()">Register</button>
+
+    </form>
+  </div>
+</div>
